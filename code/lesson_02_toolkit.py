@@ -1,4 +1,4 @@
-# lesson_02_toolkit.py
+
 
 uv = "0.13.0"  
 python = "3.13.16"
