@@ -15,3 +15,4 @@ uv run lesson_04_print_input.py
 - [x] Ollama first chat with `gemma3:1b` (`docs/ollama-first-chat.md`)
 - [x] Lesson 4: `lesson_04_print_input.py` with input(), f-string prompt builder and monthly budget with `int()`
 - [x] Prompt test with Ollama (`docs/prompt-test.md`)
+- [x] MCQs answers is put in (`docs/my-answers-module-1.md`)
