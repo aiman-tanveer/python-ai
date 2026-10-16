@@ -16,3 +16,4 @@ uv run lesson_04_print_input.py
 - [x] Lesson 4: `lesson_04_print_input.py` with input(), f-string prompt builder and monthly budget with `int()`
 - [x] Prompt test with Ollama (`docs/prompt-test.md`)
 - [x] MCQs answers is put in (`docs/my-answers-module-1.md`)
+- [x] Project M1: `code/project_m1_prompt_kit.py` AI Prompt Kit with 5 inputs and 3 prompts
