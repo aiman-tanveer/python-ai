@@ -1,63 +1,295 @@
-# python-ai learning
+# python-ai: Learning Python for AI, One Lesson at a Time
 
-**Name:** Aiman Tanveer
-**Course:** AI For Everyone
+A hands-on learning repository where I learn **Python for AI** by building small, practical tools for **local businesses** (salons, clinics, clothing shops) in Pakistan.
 
-## My AI Goal
-I want to become an AI Developer who builds AI tools that help local businesses save time.
+Every lesson solves a small, realistic "client story", for example: *"A salon answers the same questions all day"* or *"A company pays too much for AI."* The goal is to learn Python while thinking like an AI developer.
 
-## How to Run
-uv run lesson_04_print_input.py
-
-## Lessons Done So Far
-- [x] Lesson 1: Python variables and f-strings (name, dream AI role, business problem, city)
-- [x] Lesson 2: Dev toolkit setup and versions (`lesson_02_toolkit.py`)
-- [x] Ollama first chat with `gemma3:1b` (`docs/ollama-first-chat.md`)
-- [x] Lesson 4: `lesson_04_print_input.py` with input(), f-string prompt builder and monthly budget with `int()`
-- [x] Prompt test with Ollama (`docs/prompt-test.md`)
-- [x] MCQs answers is put in (`docs/my-answers-module-1.md`)
-- [x] Project M1: `code/project_m1_prompt_kit.py` AI Prompt Kit with 5 inputs and 3 prompts
-
-# AI Course Practice
-
-Small Python practice projects, one section per lesson.
-
-- [Lesson 07: Model router](#lesson-07-model-router)
-- [Lesson 08: Glow Salon mini chatbot](#lesson-08-glow-salon-mini-chatbot)
+| | |
+|---|---|
+| **Author** | Aiman Tanveer, Lahore, Pakistan |
+| **Course** | AI For Everyone, Module 1 |
+| **Goal** | Become an AI Developer who builds AI tools that help local businesses save time |
+| **Language** | Python 3.13 |
+| **Package manager** | [uv](https://docs.astral.sh/uv/) |
+| **Local AI** | [Ollama](https://ollama.com/) (`gemma3:1b`) |
 
 ---
 
-## Lesson 07: Model router
+## 📑 Table of Contents
 
-File: `code/lesson_07_conditions.py`
+1. [What this repo contains](#-what-this-repo-contains)
+2. [Project structure](#-project-structure)
+3. [Tech stack and dev toolkit](#-tech-stack-and-dev-toolkit)
+4. [Getting started](#-getting-started)
+5. [Lessons explained](#-lessons-explained)
+6. [Module 1 final project: AI Prompt Kit](#-module-1-final-project-ai-prompt-kit)
+7. [Ollama experiments](#-ollama-experiments)
+8. [Python concepts cheat sheet](#-python-concepts-cheat-sheet)
+9. [Progress tracker](#-progress-tracker)
+10. [Known limitations and next steps](#-known-limitations-and-next-steps)
 
-**Client story:** A company pays too much for AI. This router sends private
-data to a local model, code questions to a strong model, and everything else
-to a cheap one, then estimates the cost.
+---
 
-### Routing table
+## 📦 What this repo contains
 
-Prices are example numbers in PKR per 1K tokens.
+- **Python scripts** (`code/`): one script per lesson, from simple variables to a working chatbot.
+- **Notes and experiments** (`docs/`): screenshots, quiz answers, and the output of real AI models run locally with Ollama.
+- **A Jupyter notebook** (`notebook/`): a small experiment with building prompts.
+- **Project files**: `pyproject.toml`, `uv.lock`, and `.python-version` so the project runs the same way on any machine.
+
+---
+
+## 🗂 Project structure
+
+```
+python-ai/
+├── code/
+│   ├── lesson_01_intro.py            # Variables and f-strings
+│   ├── lesson_02_toolkit.py          # Dev toolkit versions
+│   ├── lesson_04_print_input.py      # print(), input(), int(), prompt builder
+│   ├── lesson_05_variables.py        # Data types and cost estimation
+│   ├── lesson_06_strings_prompts.py  # String cleaning and prompt building
+│   ├── lesson_07_conditions.py       # AI model router (if / elif / else)
+│   ├── lesson_08_mini_chatbot.py     # Glow Salon chatbot (while loop)
+│   └── project_m1_prompt_kit.py      # Module 1 final project
+├── docs/
+│   ├── image.png                     # Screenshot: tool versions
+│   ├── image2.png                    # Screenshot: first Ollama chat
+│   ├── ollama-first-chat.md          # First chat with gemma3:1b
+│   ├── prompt-test.md                # Lesson 4 prompt tested in Ollama
+│   ├── project-m1-results.md         # Module 1 project: all 3 prompts + AI answers
+│   ├── project-m1-run.png            # Screenshot of the project run
+│   └── my-answers-module-1.md        # Quiz answers for Lessons 1.1 to 1.4
+├── notebook/
+│   └── notebook-1.ipynb              # Prompt-building experiment
+├── main.py                           # "Hello, AI world!" + print() options
+├── pyproject.toml                    # Project metadata
+├── uv.lock                           # Locked dependency versions
+├── .python-version                   # Python 3.13
+└── README.md
+```
+
+---
+
+## 🛠 Tech stack and dev toolkit
+
+These are the tools set up in **Lesson 2** (verified in `docs/image.png`):
+
+| Tool | Version | What it is for |
+|------|---------|----------------|
+| **uv** | 0.13.0 | Fast Python package and project manager |
+| **Python** | 3.13.16 | The programming language |
+| **VS Code** | 1.141.1 | Code editor |
+| **Git** | 2.55.0 | Version control (this repo is on GitHub) |
+| **Ollama** | 0.34.4 | Runs AI models locally on my own computer |
+| **Claude Code** | 2.1.291 | AI coding assistant in the terminal |
+
+**Models installed in Ollama:** `gemma3:1b`, `qwen3.5:0.8b`, `gemma4:31b-cloud`
+
+> The project has **no third-party dependencies**. Everything uses plain Python. The only dev dependency is `ipykernel`, which is needed to run the Jupyter notebook in VS Code.
+
+---
+
+## 🚀 Getting started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/aiman-tanveer/python-ai.git
+cd python-ai
+```
+
+### 2. Install uv (if you don't have it)
+
+See the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+### 3. Run any lesson
+
+Run the scripts from the project root folder:
+
+```bash
+uv run code/lesson_04_print_input.py
+```
+
+or with plain Python:
+
+```bash
+python code/lesson_04_print_input.py
+```
+
+> ⚠️ Scripts live inside the `code/` folder, so always include `code/` in the path.
+
+### 4. (Optional) Install Ollama to test the prompts
+
+```bash
+ollama run gemma3:1b
+```
+
+Then paste any prompt generated by the scripts and read the answer.
+
+---
+
+## 📚 Lessons explained
+
+### Lesson 1: Variables and f-strings
+**File:** `code/lesson_01_intro.py`
+
+**What it does:** Stores personal details (name, city, dream role, a business problem, and a reason) in variables, then prints them in nice sentences.
+
+**Concepts learned:**
+- **Variables**: named boxes that hold values, e.g. `city = "Lahore"`
+- **Strings**: text inside quotes
+- **f-strings**: put variables inside text with `f"Name: {name}"`
+
+**Output:**
+```
+Name: Aiman Tanveer
+City: Lahore
+Dream AI role: AI Developer
+...
+Aiman Tanveer from Lahore is building the future with AI.
+```
+
+---
+
+### Lesson 2: Dev toolkit setup
+**File:** `code/lesson_02_toolkit.py`
+
+**What it does:** Prints a neat "toolkit card" with the version of every tool installed (uv, Python, VS Code, Git, Ollama, Claude Code). The versions come from running `--version` in the terminal (see the screenshot in `docs/image.png`).
+
+**Concepts learned:** checking that tools are installed with `tool --version`, and formatting output with f-strings.
+
+---
+
+### Lesson 3: First Python project with uv
+**File:** `main.py` (project created with `uv init`)
+
+Lesson 3 was about creating a project with **uv**, which generated `pyproject.toml`, `.python-version`, `.gitignore`, and `main.py`. The final `main.py` also practises the options of `print()`:
+
+```python
+print("Model:", "gemma4:31b-cloud")        # comma adds a space
+print("Python", "for", "AI", sep="-")      # Python-for-AI
+print("Thinking", end="... ")              # stay on the same line
+print("done")                              # Thinking... done
+```
+
+| Option | What it does |
+|--------|--------------|
+| `sep=` | Changes the separator between items (default is a space) |
+| `end=` | Changes what is printed at the end (default is a new line) |
+
+---
+
+### Lesson 4: print, input and comments
+**File:** `code/lesson_04_print_input.py`
+
+**Client story:** A tiny tool for a digital agency. The user types their name, business type, biggest problem, and monthly budget. The tool prints a welcome and builds a **ready-to-use AI prompt** that can be pasted into any AI chat.
+
+**Concepts learned:**
+- `input()` to ask the user questions
+- `int()` to convert text into a number, because **`input()` always returns text**
+- Building a **prompt template** with an f-string so it can be reused for any client
+- Writing helpful **comments** and a **docstring**
+
+**Example run:**
+```
+Your name: Aiman
+Business type: clinic
+Biggest problem: patients forgetting their appointments
+Monthly budget (PKR): 20000
+
+Welcome, Aiman!
+--- Your AI Prompt ---
+Suggest 3 AI solutions for a clinic that struggles with patients forgetting their appointments. Budget: 20000 PKR per month.
+```
+
+The generated prompt was then tested in Ollama. See [`docs/prompt-test.md`](docs/prompt-test.md).
+
+---
+
+### Lesson 5: Variables and data types
+**File:** `code/lesson_05_variables.py`
+
+**Client story:** *"Which AI model should we use, and what will it cost per chat?"*
+
+**What it does:** Stores a model's profile using the **four basic Python types**, prints each value with its type, then asks how many tokens a chat uses and how many chats happen per day. It then estimates the cost per chat and per 30-day month in PKR.
+
+| Variable | Example | Type |
+|----------|---------|------|
+| `model_name` | `"gemma3:1b"` | `str` |
+| `context_window_tokens` | `32768` | `int` |
+| `price_per_1k_tokens_pkr` | `2.75` | `float` |
+| `runs_locally` | `True` | `bool` |
+
+**Formulas:**
+```
+cost per chat = (tokens per chat / 1000) × price per 1K tokens
+monthly cost  = cost per chat × chats per day × 30
+```
+
+**Example:** 1000 tokens per chat and 50 chats per day gives **PKR 2.75 per chat** and **PKR 4125.0 per month**.
+
+> Prices are **example numbers only**, not a real quote.
+
+---
+
+### Lesson 6: Strings and prompts
+**File:** `code/lesson_06_strings_prompts.py`
+
+**Client story:** Customers type messy questions with extra spaces and random capital letters. Before anything goes to an AI, the script cleans and checks it.
+
+**What it does, step by step:**
+
+| Step | Code | Purpose |
+|------|------|---------|
+| Clean the name | `.strip().title()` | `" sara malik "` becomes `"Sara Malik"` |
+| Clean the question | `.strip().capitalize()` | Removes spaces and fixes capitals |
+| Count characters | `len(...)` | How long is the question? |
+| Estimate tokens | `round(characters / 4)` | Rule of thumb: about 4 characters is 1 token |
+| Detect a keyword | `"python" in text.lower()` | `True` or `False` |
+| Hide a bad word | `.replace("stupid", "***")` | Basic safety filter |
+| Estimate the cost | `tokens / 1000 * price` | Cost in PKR |
+| Limit the length | `safe_question[:150]` | Slicing keeps the prompt short |
+| Build the prompt | triple-quoted f-string | Multi-line prompt for the AI |
+
+**Example run** (name `sara malik`, question `How do I learn PYTHON fast?`):
+```
+========================================
+Cleaned question: How do i learn python fast?
+Characters: 27, about 7 tokens
+Mentions Python: True
+Estimated cost: PKR 0.02 (example price)
+========================================
+You are a friendly Python tutor.
+Greet Sara Malik by name and answer in 3 short lines.
+Question: How do i learn python fast?
+```
+
+---
+
+### Lesson 7: Conditions, the AI model router
+**File:** `code/lesson_07_conditions.py`
+
+**Client story:** A company pays too much for AI. This router sends each request to the **right model at the right price**.
+
+**Routing table** (prices are example numbers in PKR per 1K tokens):
 
 | Task type | Model | Price per 1K tokens |
 |-----------|-------|---------------------|
 | `code` | claude (cloud, strong at code) | 0.80 |
-| `private` | llama3.2 (local, Ollama) | 0 (runs on our own machine) |
+| `private` | llama3.2 (local, Ollama) | 0 (runs on my own machine) |
 | anything else (`chat`) | haiku (cloud, cheap) | 0.10 |
 
-Cost formula: `cost = tokens / 1000 * price`
+**Cost formula:** `cost = tokens / 1000 * price`
 
-If tokens are over 4000, the program prints a warning. Otherwise it prints
-`Length is fine.`
+If tokens are **over 4000**, the program prints a warning. Otherwise it prints `Length is fine.`
 
-### How to run
-
-```
+**Run it:**
+```bash
 python code/lesson_07_conditions.py
 ```
 
-### Example runs
-
+**Example runs:**
 ```
 Task (code / private / chat): Code
 Estimated tokens: 5000
@@ -65,7 +297,6 @@ Warning: long request, consider shortening it.
 Chosen model: claude (cloud, strong at code)
 Estimated cost: 4.00 PKR
 ```
-
 ```
 Task (code / private / chat): private
 Estimated tokens: 800
@@ -74,29 +305,26 @@ Chosen model: llama3.2 (local, Ollama)
 Estimated cost: 0.00 PKR
 ```
 
-### Notes
-
-- The task type is cleaned with `.strip().lower()`, so `" Code "` still works.
-- Tokens are converted with `int()` because `input()` always returns text.
-- `if / elif / else` covers all three task types. The `else` branch also
-  catches unexpected input, so the cheap model is the safe default.
-- The cost is printed with `:.2f` (2 decimals).
+**Why the code is written this way:**
+- `.strip().lower()` cleans the input, so `" Code "` still works.
+- `int()` is needed because `input()` returns text.
+- `if / elif / else` covers all three task types. The `else` branch also catches unexpected input, so the **cheap model is the safe default**.
+- `:.2f` prints the cost with 2 decimals.
+- Private data goes to a **local model**, so sensitive information never leaves the machine.
 
 ---
 
-## Lesson 08: Glow Salon mini chatbot
+### Lesson 8: Glow Salon mini chatbot
+**File:** `code/lesson_08_mini_chatbot.py`
 
-File: `code/lesson_08_mini_chatbot.py`
+**Client story:** A salon answers the same questions all day. This bot answers common questions, passes complaints to the manager, and **counts the questions it could not answer**, so the owner knows what to improve next.
 
-A small rule-based chatbot for a local salon. It answers common questions,
-sends complaints to the manager, and counts the questions it cannot answer.
+**Concepts learned:** `while True` loops, `break`, `continue`, counters (`total += 1`), long `if / elif` chains, `.startswith()`, and keyword matching with `in`.
 
-### Design table
+**Design table** (rules are checked from top to bottom, so the complaint rule is first):
 
-Rules are checked from top to bottom, so the complaint rule is first.
-
-| # | Intent (what the user wants) | Keywords to look for | Reply |
-|---|------------------------------|----------------------|-------|
+| # | Intent | Keywords to look for | Reply |
+|---|--------|----------------------|-------|
 | 1 | Complaint / human help | `late`, `bad`, `rude`, `complaint`, `refund` | Sorry about that. The salon manager will call you today. |
 | 2 | Greeting | `hi` (exact), starts with `hello` or `salam` | Hello {name}! How can I help you? |
 | 3 | Timings | `time`, `open`, `close`, `hours` | We are open 11 am to 9 pm, Monday to Saturday. |
@@ -106,14 +334,142 @@ Rules are checked from top to bottom, so the complaint rule is first.
 | 7 | Exit | `bye` (exact) | Take care, {name}! |
 | 8 | Fallback | anything else | Counts as unanswered and prints the AI prompt for Module 2. |
 
-### How to run
-
-```
+**Run it:**
+```bash
 python code/lesson_08_mini_chatbot.py
 ```
 
-### Notes
+**Example conversation:**
+```
+Glow Bot: Hi! Ask about timings, prices, location or appointments. Type 'bye' to exit.
+Glow Bot: What is your name?  Sara
+Sara: hi
+Glow Bot: Hello Sara! How can I help you?
+Sara: price?
+Glow Bot: Haircut is 1,500 PKR and facial is 3,000 PKR.
+Sara: my appointment was late
+Glow Bot: Sorry about that. The salon manager will call you today.
+Sara: what is AI
+Glow Bot: I am not sure yet. In Module 2, an AI will answer: ...
+Sara: bye
+Glow Bot: Take care, Sara!
+========================================
+Chat summary: 5 messages, 1 unanswered.
+```
 
-- Every message is cleaned with `.strip().lower()`.
-- Short words like `hi` use `==` or `.startswith()`, not `in`, so "which" does not match.
-- The summary at the end shows the message count and the unanswered count.
+**Smart design decisions:**
+- **The complaint rule comes first.** A customer who writes *"my appointment was late"* must reach a human, not get a booking reply just because the message contains "appointment".
+- **Short words like `hi` use `==` or `.startswith()`**, not `in`, otherwise "hi" would wrongly match inside words like "which" or "this".
+- **Empty messages are skipped** and not counted.
+- **Every message is cleaned** with `.strip().lower()`, so `"  TIMINGS "` and `"timings"` behave the same.
+- **Unanswered questions are counted**, which tells the owner which new topics to add.
+
+---
+
+## 🎯 Module 1 final project: AI Prompt Kit
+
+**File:** `code/project_m1_prompt_kit.py`
+
+A small tool for **local business owners and the digital agencies** that work with them. The owner answers **5 questions once** and gets **3 tailored, ready-to-use AI prompts**.
+
+**Inputs:** business name, business type, city, main customers, monthly budget (PKR)
+
+**Outputs:**
+
+| Prompt | Purpose |
+|--------|---------|
+| 📣 **Marketing** | A friendly, local social media post idea |
+| 🤝 **Customer Service** | A polite reply to an unhappy customer |
+| 📈 **Growth** | 3 low-cost AI ideas within the monthly budget |
+
+**Run it:**
+```bash
+python code/project_m1_prompt_kit.py
+```
+
+**Real test:** I ran all three prompts for a fictional **Noor Clinic (Lahore)** on `gemma3:1b` in Ollama. The complete prompts and the AI's answers are saved in [`docs/project-m1-results.md`](docs/project-m1-results.md), with a screenshot in `docs/project-m1-run.png`.
+
+---
+
+## 🤖 Ollama experiments
+
+| File | What I tested |
+|------|---------------|
+| [`docs/ollama-first-chat.md`](docs/ollama-first-chat.md) | First chat with `gemma3:1b`: *"Explain Python in 2 lines for beginner?"* |
+| [`docs/prompt-test.md`](docs/prompt-test.md) | The Lesson 4 prompt (clinic with patients forgetting appointments, 20,000 PKR budget) |
+| [`docs/project-m1-results.md`](docs/project-m1-results.md) | All 3 prompts from the Module 1 project |
+
+**What I noticed:** a very small 1-billion-parameter model gives useful ideas but also makes mistakes. For example, it wrote `$800 to $1200` when the budget was in PKR, and misspelled the clinic name as "Noor Klinik". This is a good reminder to **always review AI output** and that prompt quality (clear role, task, and budget) matters a lot.
+
+---
+
+## 🧠 Python concepts cheat sheet
+
+| Concept | Example | Learned in |
+|---------|---------|-----------|
+| Variables | `city = "Lahore"` | Lesson 1 |
+| f-strings | `f"Hello {name}"` | Lesson 1 |
+| `print()` with `sep` and `end` | `print("a", "b", sep="-")` | Lesson 3 |
+| `input()` | `name = input("Name: ")` | Lesson 4 |
+| Type conversion | `int(input("Budget: "))` | Lesson 4 |
+| Data types | `str`, `int`, `float`, `bool` | Lesson 5 |
+| `type()` and `round()` | `type(2.75)` | Lesson 5 |
+| String methods | `.strip()`, `.lower()`, `.title()`, `.capitalize()`, `.replace()` | Lesson 6 |
+| `len()` and slicing | `text[:150]` | Lesson 6 |
+| Membership test | `"python" in text` | Lesson 6 |
+| Multi-line strings | `"""..."""` | Lesson 6 |
+| Conditions | `if / elif / else` | Lesson 7 |
+| Comparison and logic | `==`, `>`, `or` | Lessons 7 and 8 |
+| `while` loop, `break`, `continue` | `while True:` | Lesson 8 |
+| Counters | `total += 1` | Lesson 8 |
+| Constants | `BOT = "Glow Bot"` | Lessons 7 and 8 |
+
+**AI concepts touched on so far:**
+- **Prompt**: the instruction we give an AI model
+- **Token**: a small piece of text that models count and charge for (about 4 characters)
+- **Local vs. cloud models**: local models are private and free to run; cloud models are stronger but cost money
+- **Model routing**: using the right model for the right job to save cost
+- **Rule-based chatbot**: the foundation before adding a real AI model in Module 2
+
+---
+
+## ✅ Progress tracker
+
+- [x] Lesson 1: Python variables and f-strings
+- [x] Lesson 2: Dev toolkit setup and versions
+- [x] Lesson 3: First project with `uv`
+- [x] First chat with Ollama (`gemma3:1b`)
+- [x] Lesson 4: `print`, `input`, `int()`, and the prompt builder
+- [x] Prompt test with Ollama
+- [x] Module 1 quiz answers (Lessons 1.1 to 1.4)
+- [x] Module 1 project: AI Prompt Kit
+- [x] Lesson 5: Data types and cost estimates
+- [x] Lesson 6: String cleaning and prompt building
+- [x] Lesson 7: AI model router
+- [x] Lesson 8: Glow Salon mini chatbot
+- [ ] **Module 2**: connect the chatbot to a real AI model
+
+---
+
+## ⚠️ Known limitations and next steps
+
+**Limitations (good learning points):**
+- The chatbot uses **simple keyword matching**, so a keyword can match inside a longer word (for example `late` inside "chocolate", or `open` inside "happen"). A real AI model in Module 2 will understand meaning instead of keywords.
+- Scripts crash if you type text where a number is expected (for example `abc` for the budget). Handling this with `try / except` is a good next lesson.
+- All prices in the scripts are **example numbers**, not real quotes.
+- `lesson_07` only mentions model names (claude, llama3.2, haiku) in text. It does not actually call these models yet.
+
+**Next steps:**
+1. Connect the Glow Salon chatbot to a real model (Ollama or a cloud API) for the fallback replies.
+2. Add input validation with `try / except`.
+3. Use functions and lists/dictionaries to make the code shorter and reusable.
+4. Build a real small AI tool for a local business.
+
+---
+
+## 👩‍💻 Author
+
+**Aiman Tanveer**, Lahore, Pakistan
+Learning Python, LLMs, and AI agents on the way to becoming an **AI Developer**.
+
+> *"I want to build AI tools that help local businesses save time."*
