@@ -7,7 +7,10 @@ authors = [
     { name = "Aiman", email = "aimanntanveer@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "langchain>=1.4.7",
+    "langchain-ollama>=1.1.0",
+]
 
 [dependency-groups]
 dev = [
